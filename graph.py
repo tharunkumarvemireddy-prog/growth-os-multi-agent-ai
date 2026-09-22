@@ -470,7 +470,7 @@ def build_graph():
     graph.add_node("lead_engagement", lead_engagement)
     graph.add_node("next_service", next_after_service)
     graph.add_node("rag", rag_agent)
-    graph.add_node("review", review_agent)
+    graph.add_node("review_agent", review_agent)
     graph.add_node("human_approval", human_approval)
 
     graph.add_edge(START, "route_services")
@@ -537,8 +537,8 @@ def build_graph():
         },
     )
 
-    graph.add_edge("rag", "review")
-    graph.add_edge("review", "human_approval")
+    graph.add_edge("rag", "review_agent")
+    graph.add_edge("review_agent", "human_approval")
     graph.add_edge("human_approval", END)
 
     # MemorySaver keeps interrupted threads alive while this API process runs.
