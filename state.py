@@ -8,13 +8,17 @@ class GrowthState(TypedDict, total=False):
 
     client: dict[str, Any]
     services: list[str]
+    service_index: int
     active_agents: list[str]
+
+    content_result: dict[str, Any]
+    branding_result: dict[str, Any]
+    lead_result: dict[str, Any]
 
     research: list[dict]
     knowledge: list[str]
 
-    strategy: str
-    draft: str
+    combined_output: str
     review: str
 
     final_output: str
